@@ -1,4 +1,4 @@
-import { contacts } from '../contacts-data';
+import { contacts } from '../contact-data';
 
 export function fetchContacts(){
   return dispatch => {
