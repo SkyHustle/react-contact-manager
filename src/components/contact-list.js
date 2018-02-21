@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react';
 import ContactCard from './contact-card';
+import PropTypes from 'prop-types';
 
 export default function ContactList({contacts}){
 
@@ -17,4 +18,8 @@ export default function ContactList({contacts}){
       { cards() }
     </Card.Group>
   )
+}
+
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired
 }

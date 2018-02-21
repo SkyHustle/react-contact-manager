@@ -1,11 +1,12 @@
 import React from 'react';
-import { Card, Button, Icon } from 'semantic-ui-react'
+import { Card, Button, Icon, Image } from 'semantic-ui-react'
 import PropTypes from 'prop-types';
 
 export default function ContactCard({contact, deleteContact}) {
   return (
     <Card>
       <Card.Content>
+        <Image floated='right' size='mini' src='http://www.lovemarks.com/wp-content/uploads/profile-avatars/default-avatar-ponsy-deer.png' />
         <Card.Header>
           <Icon name='user outline'/> {contact.name.first} {contact.name.last}
         </Card.Header>
