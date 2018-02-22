@@ -49,6 +49,13 @@ export default (state=defaultState, action={}) => {
       }
     }
 
+    case "FETCH_CONTACT_FULFILLED": {
+      return {
+        ...state,
+        contact: action.payload.data
+      }
+    }
+
     default:
       return state;
   }
