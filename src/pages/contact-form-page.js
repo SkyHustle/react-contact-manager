@@ -12,9 +12,9 @@ class ContactFormPage extends Component {
     redirect: false
   }
 
-  componentDidMount() {
-    this.props.newContact();
-  }
+  // componentDidMount() {
+  //   this.props.newContact();
+  // }
 
   handleSubmit = (contact) => {
     return this.props.saveContact(contact)
