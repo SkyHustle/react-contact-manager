@@ -16,7 +16,7 @@ class ContactFormPage extends Component {
     this.props.newContact();
   }
 
-  submit = (contact) => {
+  handleSubmit = (contact) => {
     return this.props.saveContact(contact)
       .then(response => this.setState({ redirect:true }))
       .catch(err => {
@@ -30,7 +30,7 @@ class ContactFormPage extends Component {
         {
           this.state.redirect ?
           <Redirect to="/" /> :
-          <ContactForm contact={this.props.contact} loading={this.props.loading} onSubmit={this.submit} />
+          <ContactForm contact={this.props.contact} loading={this.props.loading} onSubmit={this.handleSubmit} />
         }
       </div>
     )
