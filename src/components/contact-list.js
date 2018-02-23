@@ -3,12 +3,15 @@ import { Card } from 'semantic-ui-react';
 import ContactCard from './contact-card';
 import PropTypes from 'prop-types';
 
-export default function ContactList({contacts}){
+export default function ContactList({contacts, deleteContact}){
 
   const cards = () => {
     return contacts.map(contact => {
       return (
-        <ContactCard key={contact._id} contact={contact}/>
+        <ContactCard
+          key={contact._id}
+          contact={contact}
+          deleteContact={deleteContact} />
       )
     })
   }

@@ -49,13 +49,6 @@ export default (state=defaultState, action={}) => {
       }
     }
 
-    case "FETCH_CONTACT_FULFILLED": {
-      return {
-        ...state,
-        contact: action.payload.data
-      }
-    }
-
     case 'FETCH_CONTACT_PENDING': {
       return {
         ...state,
@@ -97,6 +90,16 @@ export default (state=defaultState, action={}) => {
       return {
         ...state,
         errors: errors,
+        loading: false
+      }
+    }
+
+    case 'DELETE_CONTACT_FULFILLED': {
+      const contact = action.payload.data;
+      return {
+        ...state,
+        contacts: state.contacts.filter(item => item._id !== contact._id),
+        errors: {},
         loading: false
       }
     }
