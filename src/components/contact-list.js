@@ -1,6 +1,5 @@
 import React from 'react';
-import { Card, Button, Checkbox, Icon, Table } from 'semantic-ui-react';
-import ContactCard from './contact-card';
+import { Button, Checkbox, Icon, Table } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
@@ -18,8 +17,12 @@ export default function ContactList({contacts, deleteContact}){
           <Table.Cell>{ contact.name.last }</Table.Cell>
           <Table.Cell>{ contact.phone }</Table.Cell>
           <Table.Cell>{ contact.email }</Table.Cell>
-          <Table.Cell><Link to={`/contacts/edit/${contact._id}`} className="ui basic button green">Edit</Link></Table.Cell>
-          <Table.Cell><Button basic color="red" onClick={() => deleteContact(contact._id)} >Delete</Button></Table.Cell>
+          <Table.Cell>
+            <Link to={`/contacts/edit/${contact._id}`} className="ui basic button green">Edit</Link>
+          </Table.Cell>
+          <Table.Cell>
+            <Button basic color="red" onClick={() => deleteContact(contact._id)} >Delete</Button>
+          </Table.Cell>
         </Table.Row>
       )
     })
@@ -58,22 +61,8 @@ export default function ContactList({contacts, deleteContact}){
     </Table>
   )
 
-  const cards = () => {
-    return contacts.map(contact => {
-      return (
-        <ContactCard
-          key={contact._id}
-          contact={contact}
-          deleteContact={deleteContact} />
-      )
-    })
-  }
-
   return (
     <div>
-      <Card.Group>
-        { cards() }
-      </Card.Group>
       { TableExampleFullWidth() }
     </div>
   )
