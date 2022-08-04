@@ -37,7 +37,7 @@
     "cors": "^2.8.4",
     "feathers-mongoose": "^6.1.0",
     "helmet": "^3.11.0",
-    "mongoose": "^5.0.6",
+    "mongoose": "^5.7.5",
     "mongoose-type-email": "^1.0.5",
     "nodemon": "^1.15.1",
     "serve-favicon": "^2.4.5",
